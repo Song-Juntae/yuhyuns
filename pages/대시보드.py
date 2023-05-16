@@ -4,6 +4,8 @@ import pandas as pd
 import plotly.graph_objects as go
 
 # 레이아웃
+with st.container():
+    st.title('에콰도르 마트 분석')
 
 with st.container():
     col_0_0, col_0_1, col_0_2, col_0_3 = st.columns([1,1,1,1])
