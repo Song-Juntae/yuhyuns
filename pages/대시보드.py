@@ -18,7 +18,7 @@ with st.container():
 
 # 데이터 로드
 df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
-
+df['date'] = to_datetime(df['date'])
 df['년도'] = df['date'].dt.year
 df['월'] = df['date'].dt.month
 df['일'] = df['date'].dt.day
