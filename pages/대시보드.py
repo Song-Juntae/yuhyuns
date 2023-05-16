@@ -16,7 +16,8 @@ with st.container():
 
 from pathlib import Path
 
-print(Path.cwd())
+tmp = Path.cwd()
+tmp
 
 df = pd.read_csv('/app/song-juntae/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
 
