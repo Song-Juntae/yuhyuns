@@ -19,7 +19,13 @@ with st.container():
 # 데이터 로드
 df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
 
+df['년도'] = df['date'].dt.year
+df['월'] = df['date'].dt.month
+df['일'] = df['date'].dt.day
+
 # 시각화
+with col_0_0:
+    df
 
 with col_0_1:
     options = st.selectbox(
