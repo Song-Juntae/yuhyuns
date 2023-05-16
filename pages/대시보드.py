@@ -25,7 +25,10 @@ df['일'] = df['date'].dt.day
 
 # 시각화
 with col_0_0:
-    df
+    year = st.selectbox(
+    '년도를 선택해주세요',
+    (2013,2014,2015,2016,2017), key='year')
+    st.write('You selected:', year)
 
 with col_0_1:
     options = st.selectbox(
