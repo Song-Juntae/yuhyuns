@@ -20,7 +20,7 @@ df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.cs
 # 시각화
 
 with col_1_0:
-    가게25번카테고리매출합 = pd.DataFrame(df[df['store_nbr'] == 25].sum()).sort_values(0, ascending=False)
+    가게25번카테고리매출합 = pd.DataFrame(df[df['store_nbr'] == 25].dropna().sum()).sort_values(0, ascending=False)
     가게25번카테고리매출합 = 가게25번카테고리매출합.reset_index()
     가게25번카테고리매출합.columns = ['카테고리','매출합']
 
