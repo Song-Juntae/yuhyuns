@@ -33,7 +33,7 @@ df['월'] = df['date'].dt.month
 df['일'] = df['date'].dt.day
 
 # 시각화
-with col_0_0:
+with col_0_1:
     st.title('에콰도르 마트 분석')
 
 with col_2_1:
