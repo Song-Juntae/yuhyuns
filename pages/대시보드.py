@@ -20,7 +20,7 @@ df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.cs
 # 시각화
 
 with col_1_0:
-    options = st.select(
+    options = st.selectbox(
         '가게 번호를 선택해주세요.',
         [1,2,3,4,5,6,7,8,9,10],
         [1])
