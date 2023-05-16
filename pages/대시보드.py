@@ -12,7 +12,7 @@ with st.container():
     col_1_0, col_1_1, col_1_2, col_1_3 = st.columns([1,1,1,1])
 
 with st.container():
-    col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1])
+    col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1,1])
 
 with st.container():
     col_3_0, col_3_1, col_3_2, col_3_3 = st.columns([1,1,1,1])
