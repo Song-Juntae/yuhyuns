@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 # 레이아웃
 with st.container():
-    col_0_0 = st.columns(1)
+    col_0_0, col_0_1, col_0_2 = st.columns([1,3,1])
 
 with st.container():
     col_1_0, col_1_1, col_1_2, col_1_3 = st.columns([1,1,1,1])
