@@ -12,13 +12,13 @@ with st.container():
     col_1_0, col_1_1, col_1_2, col_1_3 = st.columns([1,1,1,1])
 
 with st.container():
-    col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1,1])
+    col_2_0, col_2_1, col_2_2 = st.columns([1,2,2])
 
 with st.container():
     col_3_0, col_3_1, col_3_2, col_3_3 = st.columns([1,1,1,1])
 
 with st.container():
-    col_4_0, col_4_1, col_4_2, col_4_3 = st.columns([1,1,1,1])
+    col_4_0, col_4_1, col_4_2 = st.columns([1,2,2])
 
 with st.container():
     col_5_0, col_5_1, col_5_2, col_5_3 = st.columns([1,1,1,1])
@@ -47,7 +47,7 @@ with col_2_1:
     fig = go.Figure([go.Line(x=라인그래프['date'], y=라인그래프['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='line')
 
-with col_2_3:
+with col_2_2:
     year = st.selectbox(
     '년도를 선택해주세요',
     (2013,2014,2015,2016,2017), key='year')
@@ -68,7 +68,7 @@ with col_4_1:
     fig = go.Figure([go.Bar(x=가게25번카테고리매출합['카테고리'], y=가게25번카테고리매출합['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='bar')
 
-with col_4_3:
+with col_4_2:
     fig = px.treemap(
         가게25번카테고리매출합,
         path=["카테고리"],
