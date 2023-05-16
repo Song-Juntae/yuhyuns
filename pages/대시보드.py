@@ -13,13 +13,7 @@ with st.container():
     col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1,1])
 
 # 데이터 로드
-
-from pathlib import Path
-
-tmp = Path.cwd()
-tmp
-
-df = pd.read_csv('/app/song-juntae/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
+df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
 
 # 시각화
 df
