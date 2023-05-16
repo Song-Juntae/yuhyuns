@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+import plotly.express as px
 import plotly.graph_objects as go
 
 # 레이아웃
@@ -51,3 +52,11 @@ with col_1_1:
     가게25번카테고리매출합.columns = ['카테고리','매출합']
     fig = go.Figure([go.Bar(x=가게25번카테고리매출합['카테고리'], y=가게25번카테고리매출합['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='bar')
+
+with col_1_2:
+    fig = px.treemap(
+        가게25번카테고리매출합,
+        path=["카테고리"],
+        values ='매출합')
+    fig.update_layout(margin = dict(t = 50,l = 25, r = 25, b = 25))
+    st.plotly_chart(fig, use_container_width=True, key='treemap')
