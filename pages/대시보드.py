@@ -28,7 +28,7 @@ with col_0_1:
     fig = go.Figure([go.Line(x=라인그래프['date'], y=라인그래프['매출합'])])
     st.plotly_chart(fig, use_container_width=True)
 
-with col_1_0:
+with col_1_1:
     options = st.selectbox(
         '가게 번호를 선택해주세요.',
         (1,2,3,4,5,6,7,8,9,10))
