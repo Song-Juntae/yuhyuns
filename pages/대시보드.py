@@ -18,6 +18,7 @@ with st.container():
     col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1,1])
 
 # 데이터 로드
+광고 = pd.read_csv('/app/yuhyuns/data/광고.csv')
 df = pd.read_csv('/app/yuhyuns/data/날짜별_가게별_카테모리매출합.csv')
 df['date'] = pd.to_datetime(df['date'])
 df['년도'] = df['date'].dt.year
@@ -42,7 +43,6 @@ with col_0_3:
     '년도를 선택해주세요',
     (2013,2014,2015,2016,2017), key='year')
     st.write('You selected:', year)
-    광고 = df.groupby(['년도','store_nbr'])[['sales','onpromotion']].sum().reset_index()
     m = 광고['년도'] == year
 
     fig = px.scatter(광고[m], x="sales", y="onpromotion", color="store_nbr")
