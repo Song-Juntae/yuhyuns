@@ -32,12 +32,12 @@ with col_0_1:
     st.plotly_chart(fig, use_container_width=True)
 
 with col_1_1:
-    options = st.selectbox(
+    options2 = st.selectbox(
         '가게 번호를 선택해주세요.',
         (1,2,3,4,5,6,7,8,9,10))
     
-    st.write('가게 번호:', options)
-    가게25번카테고리매출합 = pd.DataFrame(df.iloc[:,2:][df['store_nbr'] == options].dropna().sum()).sort_values(0, ascending=False)
+    st.write('가게 번호:', options2)
+    가게25번카테고리매출합 = pd.DataFrame(df.iloc[:,2:][df['store_nbr'] == options2].dropna().sum()).sort_values(0, ascending=False)
     가게25번카테고리매출합 = 가게25번카테고리매출합.reset_index()
     가게25번카테고리매출합.columns = ['카테고리','매출합']
 
