@@ -42,6 +42,13 @@ with col_0_1:
     fig = go.Figure([go.Line(x=라인그래프['date'], y=라인그래프['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='line')
 
+with col_0_3:
+    광고 = 학습데이터.groupby(['년도','store_nbr'])[['sales','onpromotion']].sum().reset_index()
+    m = 광고['년도'] == year
+
+    fig = px.scatter(광고[m], x="sales", y="onpromotion", color="store_nbr")
+    st.plotly_chart(fig, use_container_width=True, key='promo')
+
 with col_1_1:
     options2 = st.selectbox(
         '가게 번호를 선택해주세요.',
