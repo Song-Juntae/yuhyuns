@@ -6,16 +6,23 @@ import plotly.graph_objects as go
 
 # 레이아웃
 with st.container():
-    st.title('에콰도르 마트 분석')
+    col_0_0 = st.columns()
 
 with st.container():
-    col_0_0, col_0_1, col_0_2, col_0_3 = st.columns([1,1,1,1])
+    col_1_0, col_1_1, col_1_2 = st.columns([1,1,1,1])
 
 with st.container():
-    col_1_0, col_1_1, col_1_2 = st.columns([1,1,1])
+    col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1])
 
 with st.container():
-    col_2_0, col_2_1, col_2_2, col_2_3 = st.columns([1,1,1,1])
+    col_3_0, col_3_1, col_3_2, col_3_3 = st.columns([1,1,1,1])
+
+with st.container():
+    col_4_0, col_4_1, col_4_2, col_4_3 = st.columns([1,1,1,1])
+
+with st.container():
+    col_5_0, col_5_1, col_5_2, col_5_3 = st.columns([1,1,1,1])
+
 
 # 데이터 로드
 광고 = pd.read_csv('/app/yuhyuns/data/광고.csv')
@@ -26,8 +33,10 @@ df['월'] = df['date'].dt.month
 df['일'] = df['date'].dt.day
 
 # 시각화
+with col_0_0:
+    st.title('에콰도르 마트 분석')
 
-with col_0_1:
+with col_2_1:
     options = st.selectbox(
         '가게 번호를 선택해주세요.',
         (1,2,3,4,5,6,7,8,9,10), key='line_options')
@@ -38,7 +47,7 @@ with col_0_1:
     fig = go.Figure([go.Line(x=라인그래프['date'], y=라인그래프['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='line')
 
-with col_0_3:
+with col_2_3:
     year = st.selectbox(
     '년도를 선택해주세요',
     (2013,2014,2015,2016,2017), key='year')
@@ -48,7 +57,7 @@ with col_0_3:
     fig = px.scatter(광고[m], x="sales", y="onpromotion", color="store_nbr")
     st.plotly_chart(fig, use_container_width=True, key='promo')
 
-with col_1_1:
+with col_4_1:
     options2 = st.selectbox(
         '가게 번호를 선택해주세요.',
         (1,2,3,4,5,6,7,8,9,10), key='bar_options2')
@@ -59,7 +68,7 @@ with col_1_1:
     fig = go.Figure([go.Bar(x=가게25번카테고리매출합['카테고리'], y=가게25번카테고리매출합['매출합'])])
     st.plotly_chart(fig, use_container_width=True, key='bar')
 
-with col_1_2:
+with col_4_3:
     fig = px.treemap(
         가게25번카테고리매출합,
         path=["카테고리"],
