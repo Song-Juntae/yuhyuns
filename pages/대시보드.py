@@ -25,11 +25,6 @@ df['월'] = df['date'].dt.month
 df['일'] = df['date'].dt.day
 
 # 시각화
-with col_0_0:
-    year = st.selectbox(
-    '년도를 선택해주세요',
-    (2013,2014,2015,2016,2017), key='year')
-    st.write('You selected:', year)
 
 with col_0_1:
     options = st.selectbox(
@@ -43,7 +38,11 @@ with col_0_1:
     st.plotly_chart(fig, use_container_width=True, key='line')
 
 with col_0_3:
-    광고 = 학습데이터.groupby(['년도','store_nbr'])[['sales','onpromotion']].sum().reset_index()
+    year = st.selectbox(
+    '년도를 선택해주세요',
+    (2013,2014,2015,2016,2017), key='year')
+    st.write('You selected:', year)
+    광고 = df.groupby(['년도','store_nbr'])[['sales','onpromotion']].sum().reset_index()
     m = 광고['년도'] == year
 
     fig = px.scatter(광고[m], x="sales", y="onpromotion", color="store_nbr")
