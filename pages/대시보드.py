@@ -32,11 +32,11 @@ with col_1_0:
     가게25번카테고리매출합.columns = ['카테고리','매출합']
 
     fig = go.Figure([go.Bar(x=가게25번카테고리매출합['카테고리'], y=가게25번카테고리매출합['매출합'])])
-    fig
+    st.plotly_chart(fig, use_container_width=True)
 
 with col_1_1:
     라인그래프 = df.set_index('date').iloc[:,1:][df.set_index('date')['store_nbr'] == 25].sum(axis=1)
     라인그래프 = 라인그래프.reset_index()
     라인그래프.columns = ['date','매출합']
     fig = go.Figure([go.Line(x=라인그래프['date'], y=라인그래프['매출합'])])
-    fig
+    st.plotly_chart(fig, use_container_width=True)
