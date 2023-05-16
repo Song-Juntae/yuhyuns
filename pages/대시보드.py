@@ -34,7 +34,7 @@ df['일'] = df['date'].dt.day
 
 # 시각화
 with col_0_1:
-    st.title('에콰도르 마트 분석')
+    st.markdown("<h1 style='text-align: center; color: grey;'>에콰도르 마트 분석</h1>", unsafe_allow_html=True)
 
 with col_2_1:
     options = st.selectbox(
